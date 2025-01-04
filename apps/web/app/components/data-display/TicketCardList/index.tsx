@@ -13,6 +13,7 @@ const TicketCardList = ({ data = [], className, onClick = () => {} }: TicketCard
       {data.map((item, idx) => (
         <div key={item.id}>
           <TicketCard
+            isActive={item.amount >= 0}
             onClick={() => onClick(item)}
             description={item.description}
             expiredDate={item.ended_date}
